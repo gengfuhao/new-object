@@ -1,0 +1,13 @@
+package ltd.newbee.mall.newbeemall.service;
+
+import java.util.List;
+
+import ltd.newbee.mall.newbeemall.entity.GoodsImage;
+import ltd.newbee.mall.newbeemall.vo.GoodsImageVO;
+
+public interface GoodsImageService {
+	
+	
+	List<GoodsImageVO> goodsimage(int goodsId);;
+	
+}

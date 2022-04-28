@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.entity.indexConfig"/>
+    <fullyQualifiedTypeName name="java.io.SerializablePermission"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.vo.SecondLevelCategoryVO"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.vo.ThirdLevelCategoryVO"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.TreeMap"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.service.NewBeeMallCarouselService"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.entity.MallUser"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.vo.NewBeeMallGoodsDetailVO"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.vo.NewBeeMailUserVO"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.service.CheckUserExistsService"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.service.RunRecommendApiHistoryService"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.service.GoodsDetailService"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.entity.GoodsDetail"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.vo.NewBeeMailDetailVO"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.dao.GoodsDetailMapper"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.entity.GoodsImage"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.vo.GoodsImageVO"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.dao.GoodsImageMapper"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.entity.TbNewMallGoodsInfo"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.vo.TbNewBeeMallGoodsInfoVO"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.dao.TbNewMallGoodsInfoMapper"/>
+    <fullyQualifiedTypeName name="cn.hutool.core.bean.BeanUtil"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.service.TbNewMallGoodsInfoService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.vo.QuetionAnswerVO"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.entity.QuetionAnswerEntity"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.dao.QuetionAnswerMapper"/>
+    <fullyQualifiedTypeName name="ltd.newbee.mall.newbeemall.service.QuetionAnswerService"/>
+</qualifiedTypeNameHistroy>

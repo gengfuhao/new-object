@@ -1,0 +1,16 @@
+package ltd.newbee.mall.newbeemall.service.impl;
+
+import java.util.List;
+
+import ltd.newbee.mall.newbeemall.entity.GoodsDetail;
+import ltd.newbee.mall.newbeemall.service.GoodsLmageService;
+
+public class GoodsImageServicelmpl implements GoodsLmageService {
+
+	@Override
+	public List<GoodsDetail> selectGoodsDetail(long goodsId) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+}

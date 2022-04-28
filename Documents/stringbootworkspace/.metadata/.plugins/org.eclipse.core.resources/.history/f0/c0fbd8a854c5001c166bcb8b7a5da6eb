@@ -1,0 +1,60 @@
+package ltd.newbee.mall.newbeemall.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import cn.hutool.core.bean.BeanUtil;
+import ltd.newbee.mall.newbeemall.dao.TbNewMallGoodsInfoMapper;
+import ltd.newbee.mall.newbeemall.entity.TbNewMallGoodsInfo;
+import ltd.newbee.mall.newbeemall.vo.TbNewBeeMallGoodsInfoVO;
+
+@Service
+public class TbNewMallGoodsInfoServicelmpl {
+	
+	@Resource 
+	TbNewMallGoodsInfoMapper tbNewMallGoodsInfoMapper;
+	
+	@Override
+	public List<TbNewBeeMallGoodsInfoVO> tbNewBeeMall(){
+		
+		List<TbNewMallGoodsInfo> tbNewBeeMallMapper =tbNewMallGoodsInfoMapper.tbNewBeeMall();
+		List<TbNewBeeMallGoodsInfoVO> tbNewBeeMallVO = new ArrayList<>();
+		
+		for(TbNewMallGoodsInfo gg : tbNewBeeMallMapper) {
+			TbNewBeeMallGoodsInfoVO goodsInfoVO = new TbNewBeeMallGoodsInfoVO();
+			TbNewMallGoodsInfo tbentity =new TbNewMallGoodsInfo();
+//			goodsInfoVO.setCreateTime();
+//			goodsInfoVO.setCreateUser();
+//			goodsInfoVO.setGoodsCarousel();
+//			goodsInfoVO.setGoodsCategoryId();
+//			goodsInfoVO.setGoodsCoverImg();
+//			goodsInfoVO.setGoodsDetailContent();
+//			goodsInfoVO.setGoodsId();
+//			goodsInfoVO.setGoodsIntro();
+//			goodsInfoVO.setGoodsName();
+//			goodsInfoVO.setGoodsSellStatus();
+//			goodsInfoVO.setOriginalPrice();
+//			goodsInfoVO.setSellingPrice();
+// 			goodsInfoVO.setStockNum();
+// 			goodsInfoVO.setTag();
+// 			goodsInfoVO.set
+			BeanUtil.copyProperties(goodsInfoVO, tbentity);
+			tbNewBeeMallVO.add(goodsInfoVO);
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		return tbNewBeeMallVO;
+		
+	}
+
+}

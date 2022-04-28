@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.mybatis.generator.eclipse.launching.LaunchConfigurationType">
+    <stringAttribute key="org.mybatis.generator.eclipse.ui.CONFIG_TAB.FILE_NAME" value="${workspace_loc:/newbee-mall/src/main/resources/generatorConfig.xml}"/>
+    <stringAttribute key="org.mybatis.generator.eclipse.ui.SQL_TAB.CONNECTION_URL" value=""/>
+    <stringAttribute key="org.mybatis.generator.eclipse.ui.SQL_TAB.DRIVER_CLASS" value=""/>
+    <stringAttribute key="org.mybatis.generator.eclipse.ui.SQL_TAB.FILE_NAME" value=""/>
+    <stringAttribute key="org.mybatis.generator.eclipse.ui.SQL_TAB.PASSWORD" value=""/>
+    <booleanAttribute key="org.mybatis.generator.eclipse.ui.SQL_TAB.SECURE_CREDENTIALS" value="false"/>
+    <stringAttribute key="org.mybatis.generator.eclipse.ui.SQL_TAB.USER_ID" value=""/>
+</launchConfiguration>

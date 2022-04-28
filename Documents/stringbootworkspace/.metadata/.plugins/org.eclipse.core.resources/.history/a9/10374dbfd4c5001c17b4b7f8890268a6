@@ -1,0 +1,34 @@
+package ltd.newbee.mall.newbeemall.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import cn.hutool.core.bean.BeanUtil;
+import ltd.newbee.mall.newbeemall.entity.QuetionAnswerEntity;
+import ltd.newbee.mall.newbeemall.service.QuetionAnswerService;
+import ltd.newbee.mall.newbeemall.vo.QuetionAnswerVO;
+import ltd.newbee.mall.newbeemall.dao.QuetionAnswerService;
+
+@Service
+public class QuetionAnswerlmpl implements QuetionAnswerService {
+	@Resource
+	QuetionAnswerService quetionAnswerService;
+	
+	@Override
+	public List<QuetionAnswerVO> queTity(int goodsId) {
+		// TODO 自動生成されたメソッド・スタブ
+		List<QuetionAnswerVO> quetionVO = new ArrayList<>();
+		List<QuetionAnswerEntity> quetionentity =quetionAnswerService.queTity(goodsId);
+	
+	List<QuetionAnswerVO> imageVoList = BeanUtil.copyToList(quetionentity, QuetionAnswerVO.class);
+
+		
+		
+		return imageVoList;
+	}
+
+}

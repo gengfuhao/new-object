@@ -1,0 +1,36 @@
+package ltd.newbee.mall.newbeemall.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import ltd.newbee.mall.newbeemall.dao.GoodsDetailMapper;
+import ltd.newbee.mall.newbeemall.dao.GoodsImageMapper;
+import ltd.newbee.mall.newbeemall.entity.GoodsImage;
+import ltd.newbee.mall.newbeemall.service.GoodsImageService;
+import ltd.newbee.mall.newbeemall.vo.GoodsImageVO;
+
+public class GoodsImageServicelmpl implements GoodsImageService {
+	
+	@Resource
+	GoodsImageMapper goodsImageMapper;
+	@Override
+	public List<GoodsImageVO> goodsimage(int goodsId) {
+		
+		// TODO 自動生成されたメソッド・スタブ
+		List<GoodsImage> image=goodsImageMapper.goodsimage(goodsId);
+		List<GoodsImageVO> imagevo =new ArrayList<>();
+		for(GoodsImage cg : image) {
+			
+			
+			
+			
+			
+		}
+		
+		
+		return null;
+	}
+
+}

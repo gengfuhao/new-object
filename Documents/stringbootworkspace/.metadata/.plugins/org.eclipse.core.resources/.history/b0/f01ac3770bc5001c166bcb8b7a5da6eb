@@ -1,0 +1,24 @@
+package ltd.newbee.mall.newbeemall.vo;
+
+import java.io.Serializable;
+import java.util.List;
+
+public class GoodsImageVO implements Serializable{
+	private int goodsId;
+	private List<GoodsImage2VO> goodsimage2VO;
+	public int getGoodsId() {
+		return goodsId;
+	}
+	public void setGoodsId(int goodsId) {
+		this.goodsId = goodsId;
+	}
+	public List<GoodsImage2VO> getGoodsimage2VO() {
+		return goodsimage2VO;
+	}
+	public void setGoodsimage2VO(List<GoodsImage2VO> goodsimage2vo) {
+		goodsimage2VO = goodsimage2vo;
+	}
+	
+	
+
+}

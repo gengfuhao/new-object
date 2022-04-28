@@ -1,0 +1,20 @@
+package ltd.newbee.mall.newbeemall.vo;
+
+public class GoodsImage2VO {
+	private String Image;
+	private int goodsRank;
+	public String getImage() {
+		return Image;
+	}
+	public void setImage(String image) {
+		Image = image;
+	}
+	public int getGoodsRank() {
+		return goodsRank;
+	}
+	public void setGoodsRank(int goodsRank) {
+		this.goodsRank = goodsRank;
+	}
+	
+
+}

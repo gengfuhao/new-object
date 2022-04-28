@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="ltd.newbee.mall.newbeemall.dao.QuetionAnswerMapper">
+	<select id="queTity"
+		resultType="ltd.newbee.mall.newbeemall.entity.QuetionAnswerEntity">
+		select que.question_id,ans.answer_id,ans.answer_contents,que.question_contents,
+		ans.answer_id,count(ans.answer_date) 
+		from answer as ans join questions as que on ans.question_id=que.question_id join qa_like as qa
+		on qa.answer_id=ans.answer_id where que.goods_id=#{goodsId}
+		group by ans.answer_id order by count(ans.answer_date) desc,ans.answer_id
+		desc limit 3;
+	</select>
+</mapper>

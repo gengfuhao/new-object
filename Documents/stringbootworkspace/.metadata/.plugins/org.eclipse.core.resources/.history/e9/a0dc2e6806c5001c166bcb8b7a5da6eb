@@ -1,0 +1,6 @@
+package ltd.newbee.mall.newbeemall.dao;
+
+public interface GoodsImageMapper {
+	List<ArrayList<GoodsImage>> goodsimage(int goodsId);
+
+}

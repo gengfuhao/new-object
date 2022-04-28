@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="リソース &apos;newbee-mall&apos; を削除" deleteContents="false" description="リソース &apos;newbee-mall&apos; を削除" element1="/newbee-mall" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1650937334603"/>
+</session>

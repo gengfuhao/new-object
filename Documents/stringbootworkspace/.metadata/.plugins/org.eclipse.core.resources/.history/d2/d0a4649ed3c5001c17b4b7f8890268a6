@@ -1,0 +1,25 @@
+package ltd.newbee.mall.newbeemall.service.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import ltd.newbee.mall.newbeemall.service.QuetionAnswerService;
+import ltd.newbee.mall.newbeemall.vo.QuetionAnswerVO;
+
+@Service
+public class QuetionAnswerlmpl implements QuetionAnswerService {
+	@Resource
+	QuetionAnswerService quetionAnswerService;
+	
+	@Override
+	public List<QuetionAnswerVO> queTity(int goodsId) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+		
+		return null;
+	}
+
+}

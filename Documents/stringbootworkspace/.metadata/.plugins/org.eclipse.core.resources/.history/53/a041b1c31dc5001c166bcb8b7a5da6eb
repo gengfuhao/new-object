@@ -1,0 +1,32 @@
+package ltd.newbee.mall.newbeemall.entity;
+
+public class GoodsImage {
+	private Long goodsId;
+	private String Image;
+	private int goodsRank;
+	public Long getGoodsId() {
+		return goodsId;
+	}
+	public void setGoodsId(Long goodsId) {
+		this.goodsId = goodsId;
+	}
+	public String getImage() {
+		return Image;
+	}
+	public void setImage(String image) {
+		Image = image;
+	}
+	public int getGoodsRank() {
+		return goodsRank;
+	}
+	public void setGoodsRank(int goodsRank) {
+		this.goodsRank = goodsRank;
+	}
+	@Override
+	public String toString() {
+		return "GoodsImage [goodsId=" + goodsId + ", Image=" + Image + ", goodsRank=" + goodsRank + "]";
+	}
+	
+	
+
+}

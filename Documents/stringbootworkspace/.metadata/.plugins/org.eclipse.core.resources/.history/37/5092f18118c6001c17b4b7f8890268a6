@@ -1,0 +1,49 @@
+package ltd.newbee.mall.newbeemall.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import cn.hutool.core.bean.BeanUtil;
+import ltd.newbee.mall.newbeemall.entity.QuetionAnswerEntity;
+import ltd.newbee.mall.newbeemall.service.QuetionAnswerService;
+import ltd.newbee.mall.newbeemall.vo.QuetionAnswerVO;
+import ltd.newbee.mall.newbeemall.dao.QuetionAnswerMapper;
+
+@Service
+public class QuetionAnswerlmpl implements QuetionAnswerService {
+	@Resource
+	QuetionAnswerMapper quetionAnswerMapper;
+
+	@Override
+	public List<QuetionAnswerVO> queTity(int goodsId, int n, int count) {
+		// TODO 自動生成されたメソッド・スタブ
+		List<QuetionAnswerVO> quetionVO = new ArrayList<>();
+		QuetionAnswerVO quetionvo = new QuetionAnswerVO();
+//展示页面
+		int m = 0;
+		m = (n - 1) * count;
+		List<QuetionAnswerEntity> quetionentity = quetionAnswerMapper.queTity(goodsId, m, count);
+		List<QuetionAnswerVO> imageVoList = BeanUtil.copyToList(quetionentity, QuetionAnswerVO.class);
+		// 显示多少页 和一页多少个，总个数
+		QuetionAnswerVO vo = new QuetionAnswerVO();
+		int totalCount = quetionentity.size();
+		int currentPage = count;
+		int totalPage;
+		if (currentPage % currentPage == 0) {
+			totalPage = currentPage / currentPage;
+		} else {
+			totalPage = currentPage / currentPage + 1;
+		}
+		
+		
+
+		return imageVoList;
+
+//			totalCount , currentPage , totalPage
+	}
+
+}
