@@ -1,5 +1,9 @@
 <template>
   <div class="p-reviw-graph-area">
+    <h2 class="g-h-2 g-h-i p-hd">
+      <span class="material-symbols-outlined"> cloud </span>
+      <span>レビュー</span>
+    </h2>
     <div class="p-reviw-graph-area-left-row">
       <span class="p-reviw-graph-area-comp-eva">総合評価</span>
     </div>
@@ -10,10 +14,16 @@
         {{ reviewTotal.ratingAvg }}</span
       >
     </div>
+
     <!-- star -->
     <div class="p-reviw-graph-area-left-row p-reviw-graph-area-left-row-score">
       <div class="g-score p-reviw-graph-area-g-score">
-        <span :data-score="reviewTotal.ratingAvg"></span>
+        <star-rating
+          :show-rating="false"
+          v-bind:star-size="25"
+          :read-only="true"
+          v-model:rating="reviewTotal.ratingAvg"
+        ></star-rating>
       </div>
     </div>
 
@@ -29,7 +39,11 @@
 </template>
 
 <script>
+import StarRating from "vue-star-rating";
 export default {
+  components: {
+    StarRating,
+  },
   props: {
     reviewTotal: {
       //综合评价分数
@@ -42,6 +56,15 @@ export default {
 </script>
 
 <style scoped>
+.g-score,
+.g-sm-score {
+  font-size: smaller;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  height: 16px;
+}
+
 .p-reviw-graph-area {
   box-sizing: border-box;
   display: inline-block;

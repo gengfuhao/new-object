@@ -4,9 +4,15 @@
       <li class="g-reviewList_item">
         <div class="g-lg-flow-sm">
           <p class="g-score">
-            <span :data-score="review.rating">
+            <star-rating
+              :show-rating="false"
+              v-bind:star-size="25"
+              :read-only="true"
+              v-model:rating="review.rating"
+            ></star-rating>
+            <!-- <span :data-score="review.rating">
               <span class="g-clip">text.product.review.Rating</span>
-            </span>
+            </span> -->
           </p>
           <p class="g-reviewList_user">
             <b>{{ review.nickName }}</b
@@ -35,7 +41,11 @@
 </template>
 
 <script>
+import StarRating from "vue-star-rating";
 export default {
+  components: {
+    StarRating,
+  },
   props: {
     review: {
       //评价分数

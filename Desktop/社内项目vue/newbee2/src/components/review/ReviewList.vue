@@ -2,6 +2,7 @@
   <p class="g-label-brand g-reviewList_label">ピックアップレビュー</p>
   <div v-for="review in reviews" :key="review">
     <review-com :review="review"></review-com>
+    <hr />
   </div>
 </template>
 

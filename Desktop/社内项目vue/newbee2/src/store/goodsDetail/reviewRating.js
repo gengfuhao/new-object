@@ -8,7 +8,7 @@ export default {
   mutations: {
     //syncrous
     setReviewRating(state, payload) {
-      // state.reviewRating.push(payload[0].view);
+      // state.reviewRating.push(payload);
       //state.reviewRating = payload
       state.reviewRating = payload[0];
       console.log(

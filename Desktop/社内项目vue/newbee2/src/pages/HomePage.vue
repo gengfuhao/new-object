@@ -1,7 +1,9 @@
 <template>
   <div class="content-container">
     <banner-com></banner-com>
+    <hr />
     <sub-banner />
+    <hr />
     <ul-container></ul-container>
   </div>
 </template>
