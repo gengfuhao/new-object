@@ -10,9 +10,6 @@
               :read-only="true"
               v-model:rating="review.rating"
             ></star-rating>
-            <!-- <span :data-score="review.rating">
-              <span class="g-clip">text.product.review.Rating</span>
-            </span> -->
           </p>
           <p class="g-reviewList_user">
             <b>{{ review.nickName }}</b
@@ -24,6 +21,19 @@
         <p>
           {{ review.content }}
         </p>
+
+        <ul class="g-sm-flow-sm g-lg-flow g-reviewList_pics">
+          <li v-for="minphoto in photo" :key="minphoto">
+            <img
+              class="g-fw p-review-gallery_photo"
+              :src="minphoto"
+              alt=""
+              aria-expanded="false"
+              aria-controls="p-reviewGallerySwipModal"
+            />
+          </li>
+        </ul>
+
         <p class="g-reviewList_like">
           <a
             class="g-link reviewLike0"
@@ -31,8 +41,16 @@
             data-count="0"
             data="626fd36d2e90a2006100013d"
             data-clickable=""
-            ><i class="g-s g-s-like-g" aria-hidden="true"></i
-            ><span>参考になった（{{ review.count }}人）</span></a
+          >
+            <i
+              @click="review.count++"
+              style="cursor: pointer"
+              class="g-s g-s-like-g material-symbols-rounded"
+            >
+              thumb_up
+            </i>
+
+            <span>参考になった（{{ review.count }}人）</span></a
           >
         </p>
       </li>
@@ -62,19 +80,57 @@ export default {
       content: String,
       //评价日期
       reviewDate: String,
+
+      photo1: String,
+      photo2: String,
+      photo3: String,
+      photo4: String,
+      photo5: String,
+    },
+  },
+
+  computed: {
+    photo() {
+      return [
+        this.review.photo1,
+        this.review.photo2,
+        this.review.photo3,
+        this.review.photo4,
+        this.review.photo5,
+      ];
     },
   },
 };
 </script>
 
 <style scoped>
-.g-reviewList_item p {
-  word-break: break-all;
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  border: 0;
+  height: 30vh;
 }
-.g-reviewList_info {
-  margin-top: 10px;
+ul,
+ol {
+  padding: 0;
+  list-style: none;
 }
-
+.g-flow-sm,
+.g-sm-flow-sm {
+  margin-bottom: -10px;
+  margin-left: -10px;
+  flex-direction: row;
+  display: flex;
+}
+.g-reviewList_pics {
+  margin-top: 15px;
+  text-align: center;
+}
+.g-s {
+  margin-right: 0.35em;
+  display: inline-block;
+  vertical-align: middle;
+}
 .g-reviewList_h {
   font-weight: bold;
   margin: 10px 0;

@@ -11,10 +11,10 @@ export default {
       // state.reviewRating.push(payload);
       //state.reviewRating = payload
       state.reviewRating = payload[0];
-      console.log(
-        "array push333333333mutation " +
-          state.reviewRating.push(payload[0].view)
-      );
+      // console.log(
+      //   "array push333333333mutation " +
+      //     state.reviewRating.push(payload[0].view)
+      // );
     },
   },
   actions: {

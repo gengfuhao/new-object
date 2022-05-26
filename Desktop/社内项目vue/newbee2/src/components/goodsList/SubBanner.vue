@@ -11,10 +11,6 @@
 <script setup>
 import HotImage from "./HotImage.vue";
 import { reactive, onMounted } from "vue";
-// export default {
-//   components: { HotImage },
-//   setup(props) {
-//     console.log(props.title);
 const state = reactive({
   hotGoods: [],
 });
