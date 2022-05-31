@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="p-g-left-row">
+    <div @click="clickOnePage" style="cursor: pointer" class="p-g-left-row">
       <a class="g-link" id="js-totalrate" data-clickable="">
         <span
           >(<span id="js-reviews">{{ reviewTotal.reviewCount }}</span
@@ -50,6 +50,19 @@ export default {
       ratingAvg: Number,
       //评价人数
       reviewCount: Number,
+    },
+  },
+
+  methods: {
+    clickOnePage() {
+      this.$store.dispatch("setReviews2", {
+        goodsId: this.$route.params.goodsId,
+        offset: 3,
+      });
+      this.$store.dispatch("setReviews", {
+        goodsId: this.$route.params.goodsId,
+        offset: 0,
+      });
     },
   },
 };

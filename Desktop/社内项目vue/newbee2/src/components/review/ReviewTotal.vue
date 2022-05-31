@@ -2,7 +2,7 @@
   <div class="p-reviewScore p-reviewScore-sm">
     <review-total-left v-bind:reviewTotal="reviewTotal"></review-total-left>
     <div class="p-reviw-graph-area-right">
-      <template v-for="(Rating, index) in reviewRating.rating" :key="index">
+      <template v-for="(Rating, index) in reviewRating" :key="index">
         <review-total-right :Rating1="Rating"></review-total-right>
       </template>
     </div>
@@ -34,7 +34,7 @@ let reviewTotal = computed(() => {
 });
 let reviewRating = computed(() => {
   console.log("数据类型是11111", store.getters.getReviewRating);
-  return store.getters.getReviewRating;
+  return store.getters.getReviewRating.rating;
 });
 </script>
 

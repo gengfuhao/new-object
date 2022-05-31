@@ -3,7 +3,7 @@ const headers = { Accept: "application/json" };
 
 export default {
   state: {
-    reviewRating: [],
+    reviewRating: {},
   },
   mutations: {
     //syncrous

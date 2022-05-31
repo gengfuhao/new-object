@@ -27,6 +27,8 @@
     </div>
 
     <a
+      @click="clickRating(Rating1.rating)"
+      style="cursor: pointer"
       class="g-link g-link-visble"
       id="js-rate5"
       data-rate="5"
@@ -38,6 +40,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import StarRating from "vue-star-rating";
 export default {
   components: { StarRating },
@@ -50,7 +53,29 @@ export default {
       percentage: Number,
     },
   },
+
+  methods: {
+    clickRating(rating) {
+      //  this.$store.commit('JIA',this.n)
+      let showed = this.$store.getters.getShowd;
+      showed = !showed;
+
+      this.filterReviews(rating);
+      this.changeShowed(showed);
+    },
+    ...mapMutations(["filterReviews", "changeShowed"]),
+  },
 };
+
+// const showMeMore = () => {
+//   showed = !showed;
+//   store.commit("changeShowed", showed);
+//   if (showed) {
+//     btnText.value = "レビューをもっと見る";
+//   } else {
+//     btnText.value = "閉じる";
+//   }
+// };
 </script>
 <style scoped>
 .p-reviw-graph-area-row-sm {

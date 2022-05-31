@@ -1,43 +1,44 @@
 <template>
   <p class="g-label-brand g-reviewList_label">ピックアップレビュー</p>
-  <div v-for="(review, index) in reviews" :key="index">
-    <review-com :review="review"></review-com>
-    <p
-      style="border-top: 1px dashed #cccccc; height: 1px; overflow: hidden"
-    ></p>
-  </div>
+  <div>
+    <div v-for="(review, index) in reviews" :key="index">
+      <review-com :review="review"></review-com>
+      <p
+        style="border-top: 1px dashed #cccccc; height: 1px; overflow: hidden"
+      ></p>
+    </div>
 
-  <!-- <p class="g-align-tc">
+    <div v-show="!showed" v-for="(review, index) in reviews2" :key="index">
+      <review-com :review="review"></review-com>
+      <p
+        style="border-top: 1px dashed #cccccc; height: 1px; overflow: hidden"
+      ></p>
+    </div>
+  </div>
+  <!-- <div>
+    <span @click="showMeMore">{{ btnText }}</span>
+  </div> -->
+  <p class="g-align-tc">
     <a
-      @click="changeShowed = !changeShowed"
+      @click="showMeMore"
       class="g-link displaymorereview"
-      href="#p-reviewMore"
       role="button"
       aria-expanded="false"
       aria-controls="p-reviewMore"
       data-label="閉じる"
       data-accordion='{"scroll":false}'
     >
-      <i class="g-i g-i-arrow-d"></i
-      ><span
-        >レビューをもっと見る（3/<span id="js-reviews-more">{{
-          reviewCount
-        }}</span
+      <i class="g-i g-i-arrow-d"></i>
+      <span style="cursor: pointer"
+        >{{ btnText }}（3/<span id="js-reviews-more">{{ reviewCount }}</span
         >）</span
       ></a
     >
-  </p> -->
-
-  <div v-show="changeShowed" v-for="(review, index) in reviews2" :key="index">
-    <review-com :review="review"></review-com>
-    <p
-      style="border-top: 1px dashed #cccccc; height: 1px; overflow: hidden"
-    ></p>
-  </div>
+  </p>
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 import ReviewCom from "./ReviewCom.vue";
@@ -45,29 +46,50 @@ const store = useStore();
 const route = useRoute();
 const goodsId = route.params.goodsId;
 
+let btnText = ref("レビューをもっと見る");
+
 //初始化 0--2个展示
 onMounted(() => {
   store.dispatch("setReviews", { goodsId: goodsId, offset: 0 });
   store.dispatch("setReviews", { goodsId: goodsId, offset: 3 });
 });
 let reviews = computed(() => store.getters.getReviews.reviewList);
+let reviews2 = computed(() => store.getters.getReviews2.reviewList);
 let reviewCount = computed(() => store.getters.getReviews.reviewCount);
+let showed = computed(() => store.getters.getShowd);
+// computed出来的。。。放在一个叫object的value属性的地方 使用的时候一般要.value
+// let reviewCount = reviews.value.length + reviews2.value.length;
+// let reviewCount = computed(() => {
+//   if (
+//     store.getters.getReviews.reviewList != undefined &&
+//     store.getters.getReviews2.reviewList != undefined
+//   ) {
+//     return (
+//       store.getters.getReviews.reviewList.length +
+//       store.getters.getReviews2.reviewList.length
+//     );
+//   }
+// });
 
-//初始化 3-。。。的数据
-let changeShowed = false;
-if (reviewCount.value > 3) {
-  if (changeShowed) {
-    onMounted(() => {
-      store.dispatch("setReviews", { goodsId: goodsId, offset: 3 });
-    });
-    const reviews2 = computed(() => store.getters.getReviews2.reviewList);
+// 点击事件
+const showMeMore = () => {
+  showed = !showed;
+  store.commit("changeShowed", showed);
+  if (showed) {
+    btnText.value = "レビューをもっと見る";
+  } else {
+    btnText.value = "閉じる";
   }
-}
+};
 
 computed: {
+  // btnText(){
+  //   return showed === true ? "关闭" : "打开";
+  // }
   console.log("revivalist里的reviewcount数据是", reviewCount);
   console.log("revivalist里的review2数据是", reviews2);
   console.log("revivalist里的review数据是", reviews);
+  console.log("revivalist里的showed数据是", showed);
 }
 </script>
 
